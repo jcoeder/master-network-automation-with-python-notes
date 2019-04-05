@@ -18,7 +18,7 @@ if password:
 
 tn.write('enable\n')
 
-if enable != None:
+if enable is not None:
     tn.read_until('Password: ')
     tn.write(enable + '\n')
     tn.read_until('#')
