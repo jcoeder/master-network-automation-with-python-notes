@@ -7,10 +7,12 @@ user = 'cisco'
 password = 'cisco'
 enable = None
 
-file = open('routers.txt')
+#Open file called routers.txt
+routers = open('routers.txt')
 
-for line in file:
-    tn = telnetlib.Telnet(line)
+#Loop over each item in routers.txt
+for router in routers:
+    tn = telnetlib.Telnet(router)
 
     tn.read_until('Username: ')
     tn.write(user + '\n')

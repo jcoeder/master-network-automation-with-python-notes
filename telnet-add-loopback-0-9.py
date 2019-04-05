@@ -17,7 +17,6 @@ if password:
     tn.write(password + '\n')
 
 tn.write('enable\n')
-tn.write('terminal length 0\n')
 
 if enable is not None:
     tn.read_until('Password: ')
@@ -25,6 +24,8 @@ if enable is not None:
     tn.read_until('#')
 else:
     tn.read_until('#')
+
+tn.write('terminal length 0\n')
 
 tn.write('configure terminal\n')
 tn.read_until('(config)#')

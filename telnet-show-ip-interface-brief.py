@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import sys
 import telnetlib
 
 host = '172.31.33.201'
@@ -17,7 +16,6 @@ if password:
     tn.write(password + '\n')
 
 tn.write('enable\n')
-tn.write('terminal length 0\n')
 
 if enable is not None:
     tn.read_until('Password: ')
@@ -26,6 +24,8 @@ if enable is not None:
 else:
     tn.read_until('#')
 
+tn.write('terminal length 0\n')
+
 tn.write('show ip interface brief\n')
-output=tn.read_until('#')
+output = tn.read_until('#')
 print(output)
