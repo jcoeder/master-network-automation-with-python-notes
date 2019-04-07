@@ -14,11 +14,10 @@ remote_connection = ssh_client.invoke_shell()
 
 remote_connection.send('enable\n')
 remote_connection.send('configure terminal\n')
-for i in range(10):
-    remote_connection.send('interface loopback ' + str(i) + '\n')
-    remote_connection.send('description looback' + str(i))
-    remote_connection.send('ip address 10.10.200.' + str(i) + ' 255.255.255.255\n')
-    time.sleep(.2)
+for i in range(2,21):
+    remote_connection.send('vlan ' + str(i) + '\n')
+    remote_connection.send('name python_vlan' + str(i))
+    time.sleep(.5)
 remote_connection.send('exit\n')
 remote_connection.send('exit\n')
 remote_connection.send('write memory\n')
