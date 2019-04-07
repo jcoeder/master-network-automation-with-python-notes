@@ -5,15 +5,21 @@ import getpass
 
 # Prompt user for login information
 user = raw_input('Enter Username: ')
-password = getpass()
+password = getpass.getpass()
 print('Enter "enable" password if needed: ')
-enable = getpass()
+enable = getpass.getpass()
+if enable == '':
+    enable = None
 
 # Open file called routers.txt
 routers = open('routers.txt')
 
 # Loop over each item in routers.txt
 for router in routers:
+
+    # Strip whitespace from file
+    router = router.strip()
+
     # Open telnet connection
     tn = telnetlib.Telnet(router)
 
@@ -25,9 +31,10 @@ for router in routers:
         tn.read_until('Password: ')
         tn.write(password + '\n')
 
+    # Enter enable mode
     tn.write('enable\n')
 
-    # If an enable passowrd was provided, use it.
+    # If an enable passoword was provided, use it.
     if enable is not None:
         tn.read_until('Password: ')
         tn.write(enable + '\n')
@@ -41,5 +48,6 @@ for router in routers:
 
     readoutput = tn.read_all()
     saveoutput = open('Router ' + router, 'w')
+    print('Backing up router ' + router)
     saveoutput.write(readoutput)
     saveoutput.close

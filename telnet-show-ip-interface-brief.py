@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import telnetlib
+import sys
+import time
 
 host = '172.31.33.201'
 user = 'cisco'
@@ -27,5 +29,5 @@ else:
 tn.write('terminal length 0\n')
 
 tn.write('show ip interface brief\n')
-output = tn.read_until('#')
-print(output)
+time.sleep(1)
+print(tn.read_very_eager())
