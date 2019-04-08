@@ -1,0 +1,7 @@
+interface range gig 0/1-48
+switchport mode access
+swwitchport acess vlan 20
+interface range gig 0/48-52
+switchport mode trunk
+switchport trunk encapsulation dot1q
+switchport trunk allowed vlan all
