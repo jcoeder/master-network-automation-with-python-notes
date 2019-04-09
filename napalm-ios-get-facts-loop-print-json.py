@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from napalm import get_network_driver
+import json
 
 ios_driver = get_network_driver('ios')
 junos_driver = get_network_driver('junos')
@@ -16,4 +17,10 @@ devices = [iosvl3_1, iosvl3_2, iosvl3_3, vmx1]
 for device in devices:
     device.open()
     output = device.get_facts()
-    print(output)
+    print(json.dumps(output, indent=4))
+
+
+for device in devices:
+    device.open()
+    output = device.get_facts()
+    print(json.dumps(output, sort_keys=True, indent=4))
