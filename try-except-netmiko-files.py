@@ -26,7 +26,6 @@ for devices in devices_list:
     net_connect = ConnectHandler(**ios_device)
     output = net_connect.send_config_set(commands_list)
 
-
     try:
         net_connect = ConnectHandler(**ios_device)
     except(AuthenticationException):
@@ -44,3 +43,6 @@ for devices in devices_list:
     except Exception as unknown_error:
         print('And unknown error has occured: ' + unknown_error)
         continue
+
+    output = net_connect.send_config_set(commands_list)
+    print(output)
