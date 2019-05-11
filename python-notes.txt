@@ -1,0 +1,57 @@
+STRINGS
+
+immuteable
+
+'string'[1:]    # Everything except the 0th character 'tring'
+'string'[1::2]  # Step 2 after the 0th letter 'tig'
+'string'[0:4:2] # 0th through 3rd character, step 2 'sr'
+
+'string'.upper()    # In place operator
+a = 'string'
+a = a.upper()       # Must use reassignment
+
+x = 'Hello World'
+x_list = x.split()
+['Hello', 'World']
+
+
+
+
+LISTS
+
+.pop()    # In place operator
+a = [1,2,3]
+b = a.pop()
+
+a
+[1,2]
+b
+[3]
+
+
+
+
+
+
+
+
+FILES
+
+myfile = open('myfile.txt')
+contents = myfile.read()    # contents is one long sring of the file
+contents = myfile.readlines()    # contents is a list of the lines in the file
+myfile.read()    # Reads file to end, moves courser
+myfile.seek(0)   # Moves courser to beginning of file
+myfile.close()   # Close the file to allow other apps to access file
+with open('myfile.txt') as myfile:    # Prevents the need close the file.  Creates new object (copy?) of file?
+    contents = myfile.read()
+    
+with open('myfile.txt' mode='r') as myfile:    # Read
+with open('myfile.txt' mode='w') as myfile:    # Write, Overwrites existing files
+with open('myfile.txt' mode='a') as myfile:    # Append
+with open('myfile.txt' mode='r+') as myfile:   # Read and Write
+with open('myfile.txt' mode='w+') as myfile:   # Read and Write, Overwrites exiting files
+
+with open('a_file_name.txt', mode='w') as f:   # Creates new files and writes the line "I created this file!"
+    f.write('I created this file!')
+    
