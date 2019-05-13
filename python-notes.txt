@@ -105,9 +105,23 @@ a
 
 DICTIONARIES
 
+unorder
+mutable
 
 
+prices = {'apple': 2.99, ''orange': 3.33, 'milk': 1.50}
 
+dictionaries can contain lists, dictionaries, and other objects.
+d = {'k1': 123, ''k2': [1,2,3], 'k3': {'k1': 'abc'}}
+
+replace value
+d = {'apple': 2.99, ''orange': 3.33, 'milk': 1.50}
+d{'apple'] = 5.55
+d
+{'apple': 5.55, ''orange': 3.33, 'milk': 1.50}
+
+d = {'apple': 2.99, ''orange': 3.33, 'milk': 1.50}
+d.keys()
 
 
 
