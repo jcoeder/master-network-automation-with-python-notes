@@ -14,6 +14,32 @@ x = 'Hello World'
 x_list = x.split()
 ['Hello', 'World']
 
+var = 'World'
+print('Hello ' + var)
+
+print('Hello {}'.format('World'))
+print('{} {} {}'.format('Quick', 'Brown', 'Fox'))
+print('{1} {2} {0}'.format('Fox', 'Quick', 'Brown'))
+print('{word2} {word3} {word1}'.format(word1='Fox', word2='Quick', word3='Brown'))
+
+# Float persission format
+result = 0.1287001287001287
+print('The result was {r}'.format(r=result))
+# Persission
+print('The result was {r:1.3f}'.format(r=result))
+# White Space
+print('The result was {r:10.3f}'.format(r=result))
+
+#f strings
+name = 'Jose'
+print(f'Hello, his name is {name}')
+print(f'Hello, his name is {name.upper()}')
+
+
+
+
+
+
 
 
 
