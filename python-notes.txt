@@ -35,8 +35,8 @@ name = 'Jose'
 print(f'Hello, his name is {name}')
 print(f'Hello, his name is {name.upper()}')
 
-
-
+#Allignment
+print('{0:<8} | {1:^8} | {2:>8}'.format('Left', 'Center', 'Right'))
 
 
 
@@ -45,14 +45,65 @@ print(f'Hello, his name is {name.upper()}')
 
 LISTS
 
-.pop()    # In place operator
-a = [1,2,3]
-b = a.pop()
+mutable
 
+# Length
+a = [1,2,3]
+len(a)
+3
+
+# Index
+a = [1,2,3]
+a[0]
+1
+
+# Concatenate
+a = [1,2,3]
+b = [4,5,6]
+a + b
+[1,2,3,4,5,6]
+c = a + b
+c
+[1,2,3,4,5,6]
+
+# Replace
+a = [1,2,3]
+a[0] = 'ONE'
+a
+['ONE',2,3]
+
+# Append
+a = [1,2,3]
+a.append(4)
+a
+[1,2,3,4]
+
+# Pop  # In place operator
+a = [1,2,3]
+b = a.pop(0)
 a
 [1,2]
 b
 [3]
+
+# Sort  # In place operator
+a = [4,1,2,3]
+a.sort()
+a
+[1,2,3,4]
+
+# Reverse  # In place operator
+a = [4,1,2,3]
+a.reverse()
+a
+[4,3,2,1]
+
+
+
+
+
+
+DICTIONARIES
 
 
 
